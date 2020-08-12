@@ -13,8 +13,8 @@ def matrixParent(sels):
     exSelPart = exSel.split('_')
     inSelPart = inSel.split('_')
     
-    prcMmxName = pm.createNode('multMatrix', n = 'mmx_' + exSelPart[1] + '_Trs' + '_' + exSelPart[0] + inSelPart[0] + '_' + exSelPart[-2] + '_' + exSelPart[-1])
-    prcDmxName = pm.createNode('decomposeMatrix', n = 'dmx_' + exSelPart[1] + '_Trs' + '_' + exSelPart[0] + inSelPart[0] + '_' + exSelPart[-2] + '_' + exSelPart[-1])
+    prcMmxName = pm.createNode('multMatrix', n = 'mmx_' + exSelPart[1] + '_Trs' + '_' + exSelPart[0] + inSelPart[0] + '_' + exSelPart[-3] + '_' + exSelPart[-2] + '_' + exSelPart[-1])
+    prcDmxName = pm.createNode('decomposeMatrix', n = 'dmx_' + exSelPart[1] + '_Trs' + '_' + exSelPart[0] + inSelPart[0] + '_' + exSelPart[-3] + '_' + exSelPart[-2] + '_' + exSelPart[-1])
     
     pm.connectAttr( exSel + '.matrix', prcMmxName + '.matrixIn[0]')
     pm.connectAttr( exSel + '.parentMatrix', prcMmxName + '.matrixIn[1]')

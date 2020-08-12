@@ -8,12 +8,12 @@ def main():
 def matrixCreateConnect(sel):
     selPart = sel.split('_')
     #nameSetting
-    cnsName = pm.createNode('transform', n = 'cns_' + selPart[1] + '_' + selPart[-2] + '_' + selPart[-1])
+    cnsName = pm.createNode('transform', n = 'cns_' + selPart[1] + '_' + selPart[-3] + '_' + selPart[-2] + '_' + selPart[-1])
     cnsPart = cnsName.split('_')
-    trsMmxName = pm.createNode('multMatrix', n = 'mmx_' + selPart[1] + '_Trs' + '_' + cnsPart[0] + selPart[0] + '_' + selPart[-2] + '_' + selPart[-1])
-    rotMmxName = pm.createNode('multMatrix', n = 'mmx_' + selPart[1] + '_Rot' + '_' + cnsPart[0] + selPart[0] + '_' + selPart[-2] + '_' + selPart[-1])
-    trsDmxName = pm.createNode('decomposeMatrix', n = 'dmx_' + selPart[1] + '_Trs' + '_' + cnsPart[0] + selPart[0] + '_' + selPart[-2] + '_' + selPart[-1])
-    rotDmxName = pm.createNode('decomposeMatrix', n = 'dmx_' + selPart[1] + '_Rot' + '_' + cnsPart[0] + selPart[0] + '_' + selPart[-2] + '_' + selPart[-1])
+    trsMmxName = pm.createNode('multMatrix', n = 'mmx_' + selPart[1] + '_Trs' + '_' + cnsPart[0] + selPart[0] + '_' + selPart[-3] + '_' + selPart[-2] + '_' + selPart[-1])
+    rotMmxName = pm.createNode('multMatrix', n = 'mmx_' + selPart[1] + '_Rot' + '_' + cnsPart[0] + selPart[0] + '_' + selPart[-3] + '_' + selPart[-2] + '_' + selPart[-1])
+    trsDmxName = pm.createNode('decomposeMatrix', n = 'dmx_' + selPart[1] + '_Trs' + '_' + cnsPart[0] + selPart[0] + '_' + selPart[-3] + '_' + selPart[-2] + '_' + selPart[-1])
+    rotDmxName = pm.createNode('decomposeMatrix', n = 'dmx_' + selPart[1] + '_Rot' + '_' + cnsPart[0] + selPart[0] + '_' + selPart[-3] + '_' + selPart[-2] + '_' + selPart[-1])
     
     #selGet>cns
     pm.parent(cnsName, sel)
